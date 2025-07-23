@@ -1,0 +1,51 @@
+name: sos_app
+description: Emergency SOS application for Flutter
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI and Material Design
+  cupertino_icons: ^1.0.2
+  
+  # Location services
+  geolocator: ^9.0.2
+  permission_handler: ^11.0.1
+  
+  # Audio/Video recording
+  camera: ^0.10.5+4
+  path_provider: ^2.1.1
+  record: ^4.4.4
+  
+  # Sensors for shake detection
+  sensors_plus: ^3.1.0
+  
+  # HTTP requests
+  http: ^1.1.0
+  
+  # Shared preferences for settings
+  shared_preferences: ^2.2.2
+  
+  # Audio playback
+  audioplayers: ^5.2.1
+  
+  # Internationalization
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/sounds/
+    - assets/images/
