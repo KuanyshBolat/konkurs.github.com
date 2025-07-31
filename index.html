@@ -1,118 +1,693 @@
 <!DOCTYPE html>
-<html lang="kaz">
+<html lang="kk">
 
 <head>
-	<meta charset="utf-8">
-	<title>Мен және менің Болашақ мамандығым</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/php" href="php/action.php">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мен және менің Болашақ мамандығым</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            70% {
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(102, 126, 234, 0.8), 0 0 35px rgba(102, 126, 234, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-180deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            animation: slideInDown 1.2s ease-out;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 60% 30%, rgba(255,255,255,0.05) 2px, transparent 2px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            animation: fadeInLeft 1.2s ease-out 0.3s both;
+        }
+
+        .logo {
+            height: 60px;
+            width: 60px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #667eea;
+            font-size: 24px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            transition: all 0.4s ease;
+            animation: rotateIn 1s ease-out 0.5s both;
+        }
+
+        .logo:hover {
+            transform: scale(1.2) rotate(360deg);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .menu li {
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        .menu li:nth-child(1) { animation-delay: 0.2s; }
+        .menu li:nth-child(2) { animation-delay: 0.4s; }
+        .menu li:nth-child(3) { animation-delay: 0.6s; }
+        .menu li:nth-child(4) { animation-delay: 0.8s; }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .menu a:hover::before {
+            left: 100%;
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .titles {
+            text-align: center;
+            animation: fadeInUp 1.2s ease-out 0.8s both;
+        }
+
+        .titles__first {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            animation: pulse 3s ease-in-out infinite;
+            letter-spacing: 2px;
+        }
+
+        .titles h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .none a {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .none a:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .title h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            animation: zoomIn 1s ease-out 0.3s both;
+        }
+
+        .title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 3px;
+            animation: slideIn 1s ease-out 0.6s both;
+        }
+
+        .title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Services Styles */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .services__o {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .services__o:nth-child(1) { 
+            animation-delay: 0.2s; 
+            animation-fill-mode: both;
+        }
+        .services__o:nth-child(2) { 
+            animation-delay: 0.4s; 
+            animation-fill-mode: both;
+        }
+        .services__o:nth-child(3) { 
+            animation-delay: 0.6s; 
+            animation-fill-mode: both;
+        }
+
+        .services__o::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+        }
+
+        .services__o:hover::before {
+            transform: scaleX(1);
+        }
+
+        .services__o:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .services__o .icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+            transition: all 0.4s ease;
+            animation: rotateIn 1s ease-out;
+        }
+
+        .services__o:hover .icon {
+            transform: scale(1.15) rotate(360deg);
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        .services__o h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .services__o p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 1px, transparent 1px);
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        #portfolio .title h2 {
+            color: white;
+            animation: zoomIn 1s ease-out;
+        }
+
+        #portfolio .title h2::after {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+
+        #portfolio .title p {
+            color: #bdc3c7;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .heading {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .titles h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .title h2 {
+                font-size: 2.5rem;
+            }
+
+            .services__o {
+                padding: 2rem;
+            }
+        }
+
+        /* Loading Screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 1s ease-out 2s both;
+        }
+
+        .loading::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
-	
+    <!-- Loading Screen -->
+    <div class="loading"></div>
 
-	<header>
-		<div class="container">
-			<div class="heading text">
-				<img src="img/logo.png" alt="Логотип" class="logo">
-					<nav>
-						<ul class="menu">
-							<li>
-								<a href="html/future.html">БОЛАШАҚ МАМАНДЫҒЫМ</a>
-							</li>
-							<li>
-								<a href="#prof">МАМАНДЫҚ</a>
-							</li>
-							<li>
-								<a href="#">Тесттен өту</a>
-							</li>
-							<li>
-								<a href="php/index.php">Ұсыныс тастаныз</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			
-			<div class="titles">
-				<div class="titles__first">
-					ҚОШ КЕЛДІНІЗ!
-				</div>
-				<h1>Мен Және Менің Болашақ Мамандығым</h1>
-				<div class="none">
-					<a href="/html/nonecss.html">ТАЗА HTML</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	
+    <header>
+        <div class="container">
+            <div class="heading text">
+                <div class="logo">QIT</div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="html/future.html">БОЛАШАҚ МАМАНДЫҒЫМ</a></li>
+                        <li><a href="#prof">МАМАНДЫҚ</a></li>
+                        <li><a href="#">Тесттен өту</a></li>
+                        <li><a href="php/index.php">Ұсыныс тастаныз</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="titles">
+                <div class="titles__first">ҚОШ КЕЛДІНІЗ!</div>
+                <h1>Мен Және Менің Болашақ Мамандығым</h1>
+                <div class="none">
+                    <a href="html/nonecss.html">ТАЗА HTML</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section>
+        <div class="container">
+            <div class="title">
+                <h2 id="prof">Бағдарламашы</h2>
+                <p>Математикалық кодтар мен есептеулерге негізделген компьютерлік бағдарламаларды жазу саласындағы сарапшы. Бағдарламашыны 3 салаға бөліп қарауға болады.</p>
+            </div>
+                
+            <div class="services">
+                <div class="services__o">
+                    <div class="icon">💻</div>
+                    <h3>БЖ бағдарламашысы</h3>
+                    <p>Бұл ұйымдардың қалыпты жұмыс істеуі үшін қажетті бағдарламалық қамтамасыз етуді әзірлеуге және енгізуге қатысатын мамандар. Міндеттерінің ауқымы қызметкерлердің жеке қажеттіліктері үшін бағдарламаларды жаңартып, бейімдеуді және өңдеуді қамтиды.</p>
+                </div>
 
+                <div class="services__o">
+                    <div class="icon">⚙️</div>
+                    <h3>Жүйелік бағыт</h3>
+                    <p>Бұл операциялық жүйелерді, дерекқорды тарататын интерфейсті дамытатын мамандар, желілердің жұмысын басқару. Бұл ең сирек бағдарламалау түрі және ең қиын. Жүйелік мамандар үнемі сұранысқа ие.</p>
+                </div>
+            
+                <div class="services__o">
+                    <div class="icon">🌐</div>
+                    <h3>Web бағдарламашы</h3>
+                    <p>Бұл ғаламдық желілермен бірге жұмыс істейтін мамандар, мысалы интернет. Интерфейстер, динамикалық сайттар, олардың элементтері. Бұл мамандандыру соңғы кездері танымал болды - Интернет даму дәуірі.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="portfolio">
+        <div class="container">
+            <div class="title">
+                <h2>Portfolio</h2>
+                <p>Осы жерде портфолио жұмыстары көрсетіледі!</p>
+            </div>
+        </div>
+    </section>
 
-	<section>
-		<div class="container">
-			
-			<div class="title">
-					<h2 id="prof">
-						Бағадарламашы
-					</h2>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Quasar IT. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
 
-					<p>
-						Математикалық кодтар мен есептеулерге негізделген компьютерлік бағдарламаларды жазу саласындағы сарапшы. Бағдарламашыны 3 салаға бөліп қарауға болады.
-					</p>
-			</div>
-				
-				<div class="services">
-					<div class="services__o">
-						<img src="img/icon1.png" alt="icon">
-						<h3>БЖ бағдарламашысы</h3>
-						<p>Бұл ұйымдардың қалыпты жұмыс істеуі үшін қажетті бағдарламалық қамтамасыз етуді әзірлеуге және енгізуге қатысатын мамандар.Міндеттерінің ауқымы қызметкерлерлердің жеке қажеттіліктері үшін бағдарламаларды жаңартып,бейімдеуді және өндеуді,компанияның ерекшелігін қамтиды.</p>
-					</div>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-						<div class="services__o">
-							<img src="img/icon2.png" alt="icon">
-							<h3>Жүйелік бағыт</h3>
-						<p>Бұл операциялық жүйелерді,дерекқорды тарататын интерфейсті дамытатын мамандар,Желілердің жұмысын басқару.Бұл ең сирек бағдарламалау түрі және ең қиын.Жүйелік мамандар үнемі сұранысқа ие.</p>
-						</div>
-					
-							<div class="services__o">
-								<img src="img/icon3.png" alt="icon">
-								<h3>Web бағдарламашы</h3>
-						<p>Бұл ғаламдық желілермен бірге жұмыс істейтін мамандар, мысалы интернет.Интерфейстер,динамикалық сайттар,олардың элементтері.Бұл мамандандыру соңғы кездері таңымайл болды-Интернет даму дәуірі</p>
-							</div>
-				</div>
-		</div>
-	</section>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
 
+        // Observe all services cards
+        document.querySelectorAll('.services__o').forEach(card => {
+            card.classList.add('animate-on-scroll');
+            observer.observe(card);
+        });
 
+        // Add parallax effect to header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
 
-
-
-	<section id="portfolio">
-		<div class="container">
-			<div class="title">
-					<h2>
-						Portfolio
-					</h2>
-
-					<p>
-						Осы жерде бір сөздер тұрады!
-					</p>
-			</div>
-		</div>
-	</section>
-
-
-	<footer>
-		<div class="container">
-			
-		</div>
-	</footer>
-		
-	
-
+        // Add click animation to service cards
+        document.querySelectorAll('.services__o').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
 
 </body>
-
-
 </html>
