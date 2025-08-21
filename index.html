@@ -1,118 +1,341 @@
 <!DOCTYPE html>
-<html lang="kaz">
-
+<html lang="ru">
 <head>
-	<meta charset="utf-8">
-	<title>Мен және менің Болашақ мамандығым</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/php" href="php/action.php">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemocode - IT-решения для роста вашего бизнеса</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-	
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <span class="logo-text">Lemocode</span>
+                </div>
+                <ul class="nav__menu">
+                    <li><a href="#home" class="nav__link">Главная</a></li>
+                    <li><a href="services.html" class="nav__link">Услуги</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                    <li><a href="about.html" class="nav__link">О нас</a></li>
+                    <li><a href="blog.html" class="nav__link">Блог</a></li>
+                    <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+                <button class="nav__toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-	<header>
-		<div class="container">
-			<div class="heading text">
-				<img src="img/logo.png" alt="Логотип" class="logo">
-					<nav>
-						<ul class="menu">
-							<li>
-								<a href="html/future.html">БОЛАШАҚ МАМАНДЫҒЫМ</a>
-							</li>
-							<li>
-								<a href="#prof">МАМАНДЫҚ</a>
-							</li>
-							<li>
-								<a href="#">Тесттен өту</a>
-							</li>
-							<li>
-								<a href="php/index.php">Ұсыныс тастаныз</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			
-			<div class="titles">
-				<div class="titles__first">
-					ҚОШ КЕЛДІНІЗ!
-				</div>
-				<h1>Мен Және Менің Болашақ Мамандығым</h1>
-				<div class="none">
-					<a href="/html/nonecss.html">ТАЗА HTML</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        IT-решения для роста 
+                        <span class="accent-text">вашего бизнеса</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Создаем комплексные и современные IT-решения, которые решают конкретные бизнес-задачи. 
+                        Специализируемся на работе с МСБ и понимаем ваши потребности и бюджет.
+                    </p>
+                    <div class="hero__buttons">
+                        <button class="btn btn--primary">Обсудить проект</button>
+                        <button class="btn btn--secondary">Смотреть кейсы</button>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__animation">
+                        <div class="floating-element floating-element--1"></div>
+                        <div class="floating-element floating-element--2"></div>
+                        <div class="floating-element floating-element--3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Services Overview -->
+        <section class="services-preview">
+            <div class="container">
+                <h2 class="section__title">Наши услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7M3 7L12 13L21 7M3 7L12 1L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Веб-сайты</h3>
+                        <p class="service-card__description">
+                            Корпоративные сайты, лендинги и интернет-магазины с современным дизайном и высокой конверсией
+                        </p>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Мобильные приложения</h3>
+                        <p class="service-card__description">
+                            iOS, Android и кроссплатформенные приложения для автоматизации бизнес-процессов
+                        </p>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 11L12 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 14L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">CRM-системы</h3>
+                        <p class="service-card__description">
+                            Индивидуальная разработка CRM под задачи вашего бизнеса с интеграцией всех процессов
+                        </p>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 3H8C9.1046 3 10 3.89543 10 5V19C10 20.1046 9.1046 21 8 21H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 3H16C14.8954 3 14 3.89543 14 5V19C14 20.1046 14.8954 21 16 21H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">LMS-системы</h3>
+                        <p class="service-card__description">
+                            Системы дистанционного обучения для эффективной подготовки и развития персонала
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Advantages -->
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section__title">Почему выбирают нас</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="advantage-item__number">01</div>
+                        <h3 class="advantage-item__title">Опыт работы с МСБ</h3>
+                        <p class="advantage-item__description">
+                            Понимаем специфику малого и среднего бизнеса, работаем в рамках ваших бюджетов и сроков
+                        </p>
+                    </div>
+                    
+                    <div class="advantage-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="advantage-item__number">02</div>
+                        <h3 class="advantage-item__title">Комплексный подход</h3>
+                        <p class="advantage-item__description">
+                            От идеи до запуска и поддержки - полный цикл разработки IT-решений под ключ
+                        </p>
+                    </div>
+                    
+                    <div class="advantage-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="advantage-item__number">03</div>
+                        <h3 class="advantage-item__title">Современные технологии</h3>
+                        <p class="advantage-item__description">
+                            Используем актуальный стек технологий для создания масштабируемых решений
+                        </p>
+                    </div>
+                    
+                    <div class="advantage-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="advantage-item__number">04</div>
+                        <h3 class="advantage-item__title">Техподдержка 24/7</h3>
+                        <p class="advantage-item__description">
+                            Обеспечиваем стабильную работу ваших систем и оперативно решаем возникающие вопросы
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	<section>
-		<div class="container">
-			
-			<div class="title">
-					<h2 id="prof">
-						Бағадарламашы
-					</h2>
+        <!-- Portfolio Preview -->
+        <section class="portfolio-preview">
+            <div class="container">
+                <h2 class="section__title">Наши лучшие проекты</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-placeholder">
+                                <span>CRM для логистической компании</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Система управления логистикой</h3>
+                            <p class="portfolio-card__description">
+                                Автоматизация процессов доставки, увеличение эффективности на 40%
+                            </p>
+                            <div class="portfolio-card__tags">
+                                <span class="tag">CRM</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-placeholder">
+                                <span>Интернет-магазин электроники</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">E-commerce платформа</h3>
+                            <p class="portfolio-card__description">
+                                Увеличение онлайн-продаж на 65% за первые 6 месяцев работы
+                            </p>
+                            <div class="portfolio-card__tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-placeholder">
+                                <span>Мобильное приложение для фитнеса</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Фитнес-приложение</h3>
+                            <p class="portfolio-card__description">
+                                Более 10,000 активных пользователей за первый год
+                            </p>
+                            <div class="portfolio-card__tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">React Native</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-preview__cta">
+                    <a href="portfolio.html" class="btn btn--secondary">Смотреть все проекты</a>
+                </div>
+            </div>
+        </section>
 
-					<p>
-						Математикалық кодтар мен есептеулерге негізделген компьютерлік бағдарламаларды жазу саласындағы сарапшы. Бағдарламашыны 3 салаға бөліп қарауға болады.
-					</p>
-			</div>
-				
-				<div class="services">
-					<div class="services__o">
-						<img src="img/icon1.png" alt="icon">
-						<h3>БЖ бағдарламашысы</h3>
-						<p>Бұл ұйымдардың қалыпты жұмыс істеуі үшін қажетті бағдарламалық қамтамасыз етуді әзірлеуге және енгізуге қатысатын мамандар.Міндеттерінің ауқымы қызметкерлерлердің жеке қажеттіліктері үшін бағдарламаларды жаңартып,бейімдеуді және өндеуді,компанияның ерекшелігін қамтиды.</p>
-					</div>
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">Готовы обсудить ваш проект?</h2>
+                    <p class="cta__description">
+                        Получите бесплатную консультацию и оценку стоимости вашего проекта
+                    </p>
+                    <div class="cta__buttons">
+                        <button class="btn btn--primary" onclick="openContactForm()">Получить консультацию</button>
+                        <a href="tel:+74951234567" class="btn btn--outline">+7 (495) 123-45-67</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-						<div class="services__o">
-							<img src="img/icon2.png" alt="icon">
-							<h3>Жүйелік бағыт</h3>
-						<p>Бұл операциялық жүйелерді,дерекқорды тарататын интерфейсті дамытатын мамандар,Желілердің жұмысын басқару.Бұл ең сирек бағдарламалау түрі және ең қиын.Жүйелік мамандар үнемі сұранысқа ие.</p>
-						</div>
-					
-							<div class="services__o">
-								<img src="img/icon3.png" alt="icon">
-								<h3>Web бағдарламашы</h3>
-						<p>Бұл ғаламдық желілермен бірге жұмыс істейтін мамандар, мысалы интернет.Интерфейстер,динамикалық сайттар,олардың элементтері.Бұл мамандандыру соңғы кездері таңымайл болды-Интернет даму дәуірі</p>
-							</div>
-				</div>
-		</div>
-	</section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <span class="logo-text">Lemocode</span>
+                    </div>
+                    <p class="footer__description">
+                        IT-решения для роста вашего бизнеса
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Услуги</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html#web">Веб-разработка</a></li>
+                        <li><a href="services.html#mobile">Мобильные приложения</a></li>
+                        <li><a href="services.html#crm">CRM-системы</a></li>
+                        <li><a href="services.html#lms">LMS-системы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Компания</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <div class="footer__contact">
+                        <p>+7 (495) 123-45-67</p>
+                        <p>info@lemocode.ru</p>
+                        <p>Москва, ул. Примерная, 123</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Lemocode. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Обсудить проект</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Расскажите о вашем проекте" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
 
-
-
-
-
-	<section id="portfolio">
-		<div class="container">
-			<div class="title">
-					<h2>
-						Portfolio
-					</h2>
-
-					<p>
-						Осы жерде бір сөздер тұрады!
-					</p>
-			</div>
-		</div>
-	</section>
-
-
-	<footer>
-		<div class="container">
-			
-		</div>
-	</footer>
-		
-	
-
-
+    <script src="js/main.js"></script>
 </body>
-
-
 </html>
